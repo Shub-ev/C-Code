@@ -25,4 +25,13 @@ int main(){
 
     int d = -1234U;
     printf("%d\n", d);
+
+    // ***** string constants *****
+    // 'a' != "a" 
+    // string literals are immutable as seen above
+
+
+    // ***** backslash character constants (escape sequence) *****
+    // as few characters we cannot write in string (ex. tab) we use this
+    // ex: 1. \n  2. \t    and so on
 }
