@@ -33,5 +33,5 @@ int main(){
 
     // ***** backslash character constants (escape sequence) *****
     // as few characters we cannot write in string (ex. tab) we use this
-    // ex: 1. \n  2. \t    and so on
+    // ex: 1. \n  2. \t    and so on..
 }
