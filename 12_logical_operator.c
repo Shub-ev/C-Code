@@ -1,18 +1,16 @@
 #include<stdio.h>
 // in c any value other than 0 is true;
 // while 0 is false
-
-// relational operators works on the relation between two numbers (ex. 10 > 5 )
+// true and false are Boolean constants
 
 int main(){
-    // relational operators
+    // logical operators
 
-    // 1.  > 
-    // 2.  >= 
-    // 3.  <
-    // 4.  <=
-    // 5.  ==
-    // 6.  !=
+    // 1.  && 
+    // 2.  || 
+    // 3.  !
+
+    // logical XOR is not present in C and C++ but we can create function according for that
 
 
     // precedence of logical and relational
