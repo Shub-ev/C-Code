@@ -10,5 +10,6 @@
 int main(){
 
     printf("%s", (10 < 5 ? "True" : "False"));
-
+    return 0;
+    
 }
