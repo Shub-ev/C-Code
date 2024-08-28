@@ -1,5 +1,7 @@
 // ******  Other Operators  ******
-// 1. Ternary Operator
+// 1. ? (Ternary Operator)
+// 2. & ()
+// 3. * (Pointer Operator) (pointer variables holds memory address of a var)
 
 // syntax =>    Exp1 ? Exp2 : Exp3
 
@@ -8,8 +10,15 @@
 
 #include<stdio.h>
 int main(){
-
+    // 1. ? (Ternary Operator)
     printf("%s", (10 < 5 ? "True" : "False"));
     return 0;
+
+    // 2. & (pointer operator)
+    // gets the address of the variable
+    int a = 10;
+    int *b = &a;     // & gets the address of the operand (a)
+    printf("%d\n",b);
     
+    // 3. * (pointer operator) // this helps to 1.Fast reference in array elements 2. 
 }

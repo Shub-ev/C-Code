@@ -47,4 +47,12 @@ int main(){
     int x, y, z;
     x = y = z = 10; // assigning single number to 3 vars;
     printf("%d %d %d", x,y,z);
+
+
+    // ***** compound/shorthand assignment ***** 
+    int i = 10;
+    i += 10;  // -> same as         i = i + 10;
+    i -= 10;  // -> same as         i = i - 10;
+
+    // and many more
 }
