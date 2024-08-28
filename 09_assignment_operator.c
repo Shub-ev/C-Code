@@ -29,8 +29,8 @@ int main(){
 
     // float -> int
     float f = 1021.123;
-    int i = f; // here integer part of float is stored in int type var
-    printf("%d\n", i);
+    int k = f; // here integer part of float is stored in int type var
+    printf("%d\n", k);
 
     // float -> char
     char g = 65.124532; // 8 least significant bits are stored in char
@@ -53,6 +53,9 @@ int main(){
     int i = 10;
     i += 10;  // -> same as         i = i + 10;
     i -= 10;  // -> same as         i = i - 10;
+    i *= 2;
+    i /= 2;
+    i %= 2;
 
     // and many more
 }
