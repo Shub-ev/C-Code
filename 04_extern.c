@@ -4,10 +4,13 @@
 // global objects declared as static have ****** internal linkage ****** (i.e. these are available in the same file only)
 // local vars have ****** no linkage ******
 
-int main(){
-    extern int a; // this states a is declared in elsewhere
-    // (in other files and used by other files using external linkage or in same file afterwords)
-    printf("%d", a);
-}
+// to restrict the access of global variables to current file only we have to declare them static
 
-int a = 20; // global var but declared at last and this can be accessed in main using extern
+
+// ****** To use extern we have to compile both files together and only 1 should have main() ******
+int main(){
+    extern int v; // this states a is declared in else where
+    // (in other files and used by other files using external linkage or in same file afterwords)
+    printf("%d", v);
+    add(10, 20);
+}

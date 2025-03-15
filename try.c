@@ -1,7 +1,7 @@
 #include<stdio.h>
-#include<try.h>
 
+extern int a;  // Declares that the variable 'a' is defined in another file
+ 
 int main(){
-    extern int a;  // Declares that the variable 'a' is defined in another file
     printf("%d", a);
 }
