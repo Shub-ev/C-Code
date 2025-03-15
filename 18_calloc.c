@@ -25,5 +25,7 @@ int main(){
         printf("Error in memory allocation!");
     }
 
+    free(ptr);
+
     return 0;
 }

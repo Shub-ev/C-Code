@@ -31,5 +31,7 @@ int main()
         printf("%d ", *(ptr + i));      // prints 4 0's
     }
 
+    free(ptr);
+
     return 0;
 }
