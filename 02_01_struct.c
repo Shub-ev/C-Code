@@ -51,7 +51,9 @@ int main(){
     strcpy(s3.lname, "Mali");
 
     printf("Student %s %s have rollno %d\n", s3.fname, s3.lname, s3.roll);
-    // using arrow operator
+    // using pointer
+    printf("Student %s %s have rollno %d\n", (*s_ptr).fname, (*s_ptr).lname, (*s_ptr).roll);
+    // to overcome above lengthy code we use "arrow operator"
     printf("Student %s %s have rollno %d\n", s_ptr->fname, s_ptr->lname, s_ptr->roll);
 
 
