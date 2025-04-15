@@ -1,16 +1,15 @@
 #include<stdio.h>
 
 // optimized power of 
-
-int power(int b, int n)
+int power(int b, int p)
 {
-    if(n == 0) return 1;
+    if(p == 0) return 1;
 
-    if(n%2==0){
-        return power(b*b, n/2);
+    if(p%2 == 0){
+        return power(b*b, p/2);
     }
     else{
-        return b * power(b*b, n/2);
+        return b * power(b*b, p/2);
     }
 }
 
