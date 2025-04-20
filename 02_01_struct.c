@@ -17,7 +17,7 @@ struct Student{
                         // memory space so where to save data?
     char fname[20];
     char lname[20];
-} s1, s2;   // we can create structure variables here and there are global by default
+} s1, s2;   // we can create structure variables here and these are global by default
 
 
 
