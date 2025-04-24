@@ -1,16 +1,27 @@
 #ifndef LIST_H
 #define LIST_H
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<limits.h>
+
 // define structure for node
 struct Node
 {
-    int data;
+    int info;
     struct Node* next;
 };
 
 extern struct Node* head;
 
-int sum();
-int max();
+void sum(struct Node*);
+void count_nodes(struct Node*);
+void iterate(struct Node*);
+void insert_node();
+
+//max
+int max_node(struct Node*);
+//search
+struct Node* search(struct Node*, int);
 
 #endif
