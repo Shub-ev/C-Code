@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "vector": "cpp",
         "iostream": "cpp",
-        "01_list.h": "c"
+        "01_list.h": "c",
+        "array_adt.h": "c"
     }
 }
