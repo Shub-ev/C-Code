@@ -1,0 +1,131 @@
+1. Row Matrix:
+   - A matrix with only one row.
+   - Dimensions: 1 × n
+   Example:
+   [3 5 7]
+
+2. Column Matrix:
+   - A matrix with only one column.
+   - Dimensions: n × 1
+   Example:
+   [4]
+   [6]
+   [8]
+
+3. Rectangular Matrix:
+   - Number of rows ≠ number of columns.
+   Example:
+   [1 2 3]
+   [4 5 6]
+
+4. Square Matrix:
+   - Number of rows = number of columns.
+   Example:
+   [1 0 2]
+   [3 5 6]
+   [7 8 9]
+
+5. Diagonal Matrix:
+   - A square matrix with all non-diagonal elements = 0.
+   Example:
+   [4 0 0]
+   [0 7 0]
+   [0 0 9]
+
+6. Scalar Matrix:
+   - A diagonal matrix where all diagonal elements are equal.
+   Example:
+   [5 0 0]
+   [0 5 0]
+   [0 0 5]
+
+7. Identity Matrix:
+   - A diagonal matrix with all diagonal elements = 1.
+   - Also called Unit Matrix.
+   Example:
+   [1 0 0]
+   [0 1 0]
+   [0 0 1]
+
+8. Zero Matrix (Null Matrix):
+   - All elements are 0.
+   Example:
+   [0 0]
+   [0 0]
+
+9. Upper Triangular Matrix:
+   - A square matrix with all elements below the main diagonal = 0.
+   Example:
+   [1 2 3]
+   [0 5 6]
+   [0 0 9]
+
+10. Lower Triangular Matrix:
+    - A square matrix with all elements above the main diagonal = 0.
+    Example:
+    [1 0 0]
+    [4 5 0]
+    [7 8 9]
+
+11. Symmetric Matrix:
+    - A = Aᵀ (Transpose)
+    - Must be square.
+    Example:
+    [1 2 3]
+    [2 4 5]
+    [3 5 6]
+
+12. Skew-Symmetric Matrix:
+    - A = -Aᵀ
+    - Diagonal elements are always 0.
+    Example:
+    [ 0  2 -1]
+    [-2  0 -4]
+    [ 1  4  0]
+
+13. Orthogonal Matrix:
+    - Aᵀ * A = I (its transpose is its inverse).
+    - All rows and columns are orthonormal.
+    Example (2D rotation matrix):
+    [cosθ -sinθ]
+    [sinθ  cosθ]
+
+14. Singular Matrix:
+    - A square matrix whose determinant = 0.
+    - Not invertible.
+    Example:
+    [2 4]
+    [1 2]
+
+15. Non-Singular Matrix:
+    - A square matrix with non-zero determinant.
+    - Has an inverse.
+    Example:
+    [3 2]
+    [1 4]
+
+16. Idempotent Matrix:
+    - A² = A
+    Example:
+    [1 0]
+    [0 0]
+
+17. Involutory Matrix:
+    - A² = I (its own inverse).
+    Example:
+    [0 1]
+    [1 0]
+
+18. Hermitian Matrix:
+    - A = A† (equal to its conjugate transpose).
+    - Complex numbers.
+    Example:
+    [2     2+i]
+    [2-i   3  ]
+
+19. Skew-Hermitian Matrix:
+    - A† = -A (conjugate transpose is negative of the matrix).
+    - Complex entries.
+    Example:
+    [ 0     2+i ]
+    [-2-i   0   ]
