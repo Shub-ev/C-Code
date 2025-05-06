@@ -19,9 +19,7 @@ void count_nodes(struct Node*);
 void iterate(struct Node*);
 void insert_node();
 
-//max
 int max_node(struct Node*);
-//search
 struct Node* search(struct Node*, int);
 
 #endif

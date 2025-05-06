@@ -12,7 +12,8 @@ int main()
         printf("3. Print Linked List Iterative.\n");
         printf("4. Sum.\n");
         printf("5. Max Node.\n");
-        printf("6. Exit.\n");
+        printf("6. Search.\n");
+        printf("7. Exit.\n");
         printf("=> ");
         scanf("%d", &n);
 
@@ -32,6 +33,14 @@ int main()
             else
                 printf("Max Element is : %d", max);
         }
+        else if(n == 6)
+        {
+            printf("Enter element to Search: ");
+            scanf("%d", &n);
 
-    } while (n != 6);
+            struct Node* node = search(head, n);
+            printf("Data Found : %d\n", node->info);
+        }
+
+    } while (n != 7);
 }
