@@ -16,3 +16,11 @@ struct Node* search(struct Node* node, int key)
         if(node->info == key) return node;
     }
 }
+
+struct Node* search_rec(struct Node* node, int key)
+{
+    if(node == NULL) return NULL;
+    else if(node->info == key) return node;
+
+    return search_rec(node->next, key);
+}

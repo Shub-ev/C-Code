@@ -13,7 +13,8 @@ int main()
         printf("4. Sum.\n");
         printf("5. Max Node.\n");
         printf("6. Search.\n");
-        printf("7. Exit.\n");
+        printf("7. Search Recursive.\n");
+        printf("11. Exit.\n");
         printf("=> ");
         scanf("%d", &n);
 
@@ -40,6 +41,15 @@ int main()
 
             struct Node* node = search(head, n);
             printf("Data Found : %d\n", node->info);
+        }
+        else if(n == 7)
+        {
+            printf("Enter element to Search: ");
+            scanf("%d", &n);
+
+            struct Node* node = search_rec(head, n);
+            if(node != NULL) printf("Data Found : %d\n", node->info);
+            else printf("No data found!\n");
         }
 
     } while (n != 7);

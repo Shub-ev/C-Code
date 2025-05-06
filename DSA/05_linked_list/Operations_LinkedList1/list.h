@@ -21,5 +21,6 @@ void insert_node();
 
 int max_node(struct Node*);
 struct Node* search(struct Node*, int);
+struct Node* search_rec(struct Node*, int);
 
 #endif
