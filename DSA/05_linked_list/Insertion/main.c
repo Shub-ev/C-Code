@@ -10,7 +10,9 @@ int main()
         printf("1. Insert at Head.\n");
         printf("2. Insert at Tail.\n");
         printf("3. Insert at Location.\n");
-        printf("4. Display.\n");
+        printf("4. Delete Start\n");
+        printf("5. Delete End\n");
+        printf("6. Display.\n");
         printf("Enter any option.\n");
         scanf("%d", &n);
 
@@ -40,8 +42,16 @@ int main()
         }
         else if(n == 4)
         {
+            delete_start(&head);
+        }
+        else if(n == 5)
+        {
+            delete_end(&head);
+        }
+        else if(n == 6)
+        {
             display(head);
         }
-    } while (n != 5);
+    } while (n != 8);
     return 0;
 }

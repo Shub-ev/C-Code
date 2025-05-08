@@ -17,7 +17,7 @@ void insert_loc(struct Node**, int, int);
 void display(struct Node*);
 
 void delete_start(struct Node**);
-void delete_end(struct Node*);
+void delete_end(struct Node**);
 void delete_loc(struct Node**, int);
 
 #endif
