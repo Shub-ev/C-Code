@@ -19,5 +19,6 @@ void display(struct Node*);
 void delete_start(struct Node**);
 void delete_end(struct Node**);
 void delete_loc(struct Node**, int);
+void delete_list(struct Node**);
 
 #endif

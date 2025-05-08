@@ -12,8 +12,10 @@ int main()
         printf("3. Insert at Location.\n");
         printf("4. Delete Start\n");
         printf("5. Delete End\n");
-        printf("6. Display.\n");
-        printf("Enter any option.\n");
+        printf("6. Delete at Location\n");
+        printf("7. Delete List\n");
+        printf("8. Display.\n");
+        printf("Enter any option: ");
         scanf("%d", &n);
 
         // variable for data
@@ -50,8 +52,18 @@ int main()
         }
         else if(n == 6)
         {
+            printf("Enter Location : ");
+            scanf("%d", &data);
+            delete_loc(&head, data);
+        }
+        else if(n == 7)
+        {
+            delete_list(&head);
+        }
+        else if(n == 8)
+        {
             display(head);
         }
-    } while (n != 8);
+    } while (n != 9);
     return 0;
 }
