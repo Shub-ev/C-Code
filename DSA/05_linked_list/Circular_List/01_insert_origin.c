@@ -2,7 +2,7 @@
 
 void insert_origin(struct Node** head, int val)
 {
-    struct Node* node = (struct Node*) mallco (sizeof(struct Node));
+    struct Node* node = (struct Node*) malloc (sizeof(struct Node));
     node->data = val;
 
     if(*head == NULL)
@@ -14,10 +14,10 @@ void insert_origin(struct Node** head, int val)
     {
         struct Node* ptr = *head;
         
-        while(ptr->next != head)
+        while(ptr->next != *head)
             ptr = ptr->next;
 
-        node->next = head;
+        node->next = *head;
         ptr->next = node;
         *head = node;
     }

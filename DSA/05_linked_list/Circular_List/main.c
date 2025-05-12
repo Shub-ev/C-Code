@@ -3,7 +3,7 @@
 int main()
 {
     int n;
-    head = NULL;
+    struct Node* head = NULL;
 
     do
     {
@@ -25,14 +25,14 @@ int main()
         {
             printf("Enter data: ");
             scanf("%d", &data);
-            insert_start(&head, data);
+            insert_origin(&head, data);
         }
-        // else if(n == 2)
-        // {
-        //     printf("Enter data: ");
-        //     scanf("%d", &data);
-        //     insert_end(&head, data);
-        // }
+        else if(n == 2)
+        {
+            printf("Enter data: ");
+            scanf("%d", &data);
+            insert_end(&head, data);
+        }
         // else if(n == 3)
         // {
         //     int loc;

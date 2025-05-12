@@ -10,9 +10,8 @@ struct Node
     struct Node* next;
 };
 
-extern struct Node* head;
-
 void insert_origin(struct Node**, int);
+void insert_end(struct Node**, int);
 void display(struct Node*);
 
 #endif
