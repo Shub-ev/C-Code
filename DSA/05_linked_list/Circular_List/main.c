@@ -33,29 +33,29 @@ int main()
             scanf("%d", &data);
             insert_end(&head, data);
         }
-        // else if(n == 3)
-        // {
-        //     int loc;
-        //     printf("Enter data: ");
-        //     scanf("%d", &data);
-        //     printf("Enter location: ");
-        //     scanf("%d", &loc);
-        //     insert_loc(&head, data, loc);
-        // }
-        // else if(n == 4)
-        // {
-        //     delete_start(&head);
-        // }
-        // else if(n == 5)
-        // {
-        //     delete_end(&head);
-        // }
-        // else if(n == 6)
-        // {
-        //     printf("Enter Location : ");
-        //     scanf("%d", &data);
-        //     delete_loc(&head, data);
-        // }
+        else if(n == 3)
+        {
+            int loc;
+            printf("Enter data: ");
+            scanf("%d", &data);
+            printf("Enter location: ");
+            scanf("%d", &loc);
+            insert_loc(&head, data, loc);
+        }
+        else if(n == 4)
+        {
+            delete_origin(&head);
+        }
+        else if(n == 5)
+        {
+            delete_end(&head);
+        }
+        else if(n == 6)
+        {
+            printf("Enter Location : ");
+            scanf("%d", &data);
+            delete_loc(&head, data);
+        }
         // else if(n == 7)
         // {
         //     delete_list(&head);

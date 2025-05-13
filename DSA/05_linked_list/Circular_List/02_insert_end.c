@@ -9,10 +9,9 @@ void insert_end(struct Node** head, int val)
     else
     {
         struct Node* ptr = *head;
-        do
-        {
+        
+        while(ptr->next != *head)
             ptr = ptr->next;
-        } while(ptr->next != *head);
 
         // create new node
         struct Node* node = (struct Node*) malloc (sizeof(struct Node));
