@@ -1,4 +1,4 @@
-// dynamic array stack implementation with incremental strategy
+// dynamic array stack using doubling strategy
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -55,7 +55,8 @@ void push(struct Array_Stack* s)
 
     if(isStackFull(s))
     {
-        s->array = (int*) realloc(s->array, s->capacity++);
+        s->array = (int*) realloc(s->array, s->capacity * 2);
+        s->capacity *= 2;
     }
     s->array[++s->top] = data;
 }
@@ -66,8 +67,11 @@ void pop(struct Array_Stack* s)
     {
         printf("Popped %d!\n", s->array[s->top--]);
 
-        if(s->capacity != 1)
-            s->array = (int*) realloc(s->array, --(s->capacity));
+        if(s->capacity == s->top*2)
+        {
+            s->array = realloc(s->array, s->top);
+            printf("New Size : %d\n", s->top);
+        }
     }
 }
 
