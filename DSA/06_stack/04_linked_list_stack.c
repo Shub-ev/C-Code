@@ -24,35 +24,8 @@ struct Stack *create()
     s->head = NULL;
     s->size = 0;
     s->top = NULL;
-}
 
-void push(struct Stack* s)
-{
-    int data;
-    printf("Enter Data : ");
-    scanf("%d", &data);
-    struct LinkNode* n = (struct LinkNode*) malloc (sizeof(struct LinkNode));
-    if(!n)
-        return NULL;
-
-    n->data = data;
-    n->prev = s->top;
-    s->top = n;
-
-    if(s->head == NULL)
-        s->head = s->top;
-    s->size++;
-}
-
-void pop(struct Stack* s)
-{
-    printf("Popped %d\n", s->top->data);
-    struct LinkNode* n = s->top;
-
-    s->top = s->top->prev;
-    if(s->top == NULL)
-        s->head = NULL;
-    free(n);
+    return s;
 }
 
 int isStackEmpty(struct Stack* s)
@@ -78,13 +51,46 @@ void size(struct Stack* s)
     printf("Size : %d\n", s->size);
 }
 
+void push(struct Stack* s)
+{
+    int data;
+    printf("Enter Data : ");
+    scanf("%d", &data);
+    struct LinkNode* n = (struct LinkNode*) malloc (sizeof(struct LinkNode));
+    if(!n)
+        return;
+
+    n->data = data;
+    n->prev = s->top;
+    s->top = n;
+
+    if(s->head == NULL)
+        s->head = s->top;
+    s->size++;
+}
+
+void pop(struct Stack* s)
+{
+    if(isStackEmpty(s))
+        return;
+
+    printf("Popped %d\n", s->top->data);
+    struct LinkNode* n = s->top;
+
+    s->top = s->top->prev;
+    s->size--;
+    if(s->top == NULL)
+        s->head = NULL;
+    free(n);
+}
+
 int main()
 {
     struct Stack *s = create();
     int n;
     do
     {
-        printf("Options: \n");
+        printf("\nOptions: \n");
         printf("1. Push \n");
         printf("2. Pop \n");
         printf("3. IsStackEmpty \n");
@@ -101,6 +107,6 @@ int main()
         else if (n == 4)
             top(s);
         else if (n == 5)
-            capacity(s);
+            size(s);
     } while (n != 9);
 }
