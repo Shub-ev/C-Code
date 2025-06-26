@@ -49,7 +49,7 @@ bool is_queue_full(struct Queue* q)
 // check if queue is empty
 bool is_queue_empty(struct Queue* q)
 {
-    if(q->rear == q->front)
+    if(q->front == -1)
     {
         printf("Queue is empty!\n");
         return 1;
@@ -73,7 +73,7 @@ void enqueu(struct Queue* q)
     q->array[q->rear] = data;
 
     if(q->front == -1)
-        q->front = q->rear;
+        q->front = q->front+1;
 
     printf("Data entered!\n");
     return;
@@ -88,7 +88,15 @@ void dequeue(struct Queue* q)
     }
     
     printf("Dequeued : %d\n", q->array[q->front]);
-    q->front = (q->front+1) % q->capacity;
+    
+    if(q->front == q->rear)
+    {
+        q->front = q->rear = -1;
+    }
+    else 
+    {
+        q->front = (q->front+1) % q->capacity;
+    }
     return;
 }
 
