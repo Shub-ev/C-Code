@@ -14,10 +14,12 @@ struct Stack
     int top;
 };
 
+struct Stack* s;
+
 struct Stack* create();
 void push(struct Stack*);
 void pop(struct Stack*);
-void isEmpty(struct Stack*);
+int isEmpty(struct Stack*);
 void top(struct Stack*);
 void capacity(struct Stack*);
 

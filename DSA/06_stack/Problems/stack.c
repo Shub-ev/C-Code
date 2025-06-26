@@ -2,10 +2,10 @@
 
 struct Stack* create()
 {
-    struct Stack* s = (struct Stack*) malloc(sizeof(struct Stack));
+    s = (struct Stack*) malloc(sizeof(struct Stack));
     if(!s)
         return NULL;
-    
+
     s->top = -1;
     s->capacity = 1;
 
@@ -20,16 +20,11 @@ int isEmpty(struct Stack* s)
     return 0;
 }
 
-void push(struct Stack* s)
+void push(struct Stack* s, int data)
 {
-    int data;
-    printf("Enter Data : ");
-    scanf("%d", &data);
-
     if(s->top == s->capacity - 1)
     {
         s->array = (int*) realloc(s->array, s->capacity*2);
         s->capacity *= 2;
     }
-
 }
