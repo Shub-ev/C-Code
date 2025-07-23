@@ -1,64 +1,61 @@
+// infix to postfix
+
 #include <stdio.h>
-#include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
+#include <ctype.h>
 
-#define SIZE 30
-
-int stack[SIZE];
+char stack[30];
 int top = -1;
 
-int prio(char ch)
-{
-	if(ch == '+' || ch == '-'){
-		return 1;
-	} else if(ch == '*' || ch == '/'){
-		return 2;
-	} else if(ch == '^'){
-        return 3;
+int precedence(char ch) {
+    switch(ch) {
+        case '+':
+        case '-': return 1;
+        case '*':
+        case '/': return 2;
+        case '^': return 3;
+        default: return 0;
     }
-    else if(ch == '('){
-		return 4;
-	}
-
-	return -1;
 }
 
-int main()
-{
-	char ch[] = "a+b*(c^d-e)^(f+g*h)-i";
-	int n = strlen(ch);
-
-	char *res = (char*) malloc(sizeof(char) * (n+1));
-	int res_cnt = 0;
-
-	for(int i = 0; i < n; i++){
-		char chr = ch[i];
-		if(isalnum(chr)){
-			res[res_cnt++] = chr;
-		}
-        else if(chr == '('){
-            res[res_cnt] = chr;
+void infix_postfix(const char *ch, char *res) {
+    int res_p = 0;
+    for (int i = 0; ch[i]; i++) {
+        if (isalnum(ch[i])) {
+            res[res_p++] = ch[i];
         }
-        else if(chr == ')'){
-			while(top != -1 && stack[top] != '('){
-				res[res_cnt++] = stack[top--];
-			}
-            if(top != -1 && stack[top] == '(') top--;
-		}
-		else {
-			while(top != -1 && stack[top] != '(' && prio(stack[top]) >= prio(chr)){
-				res[res_cnt++] = stack[top--];
-			}
-			stack[++top] = chr;
-		}
-	}
+        else if (ch[i] == '(') {
+            stack[++top] = ch[i];
+        }
+        else if (ch[i] == ')') {
+            while (top != -1 && stack[top] != '(') {
+                res[res_p++] = stack[top--];
+            }
+            if (top != -1 && stack[top] == '(')
+                top--;  // pop '('
+        }
+        else { // operator
+            while (top != -1 && precedence(stack[top]) >= precedence(ch[i])) {
+                res[res_p++] = stack[top--];
+            }
+            stack[++top] = ch[i];
+        }
+    }
 
-	while(top != -1){
-		res[res_cnt++] = stack[top--];
-	}
+    while (top != -1) {
+        res[res_p++] = stack[top--];
+    }
 
-	printf("%s\n", res);
+    res[res_p] = '\0';
+}
+
+
+int main(){
+	char expr[] = "a+b*(c^d-e)^(f+g*h)-i";
+	char res[sizeof(expr) + 1];
+
+	infix_postfix(expr, res);
+	printf("Result : %s\n", res);
 
 	return 0;
 }
