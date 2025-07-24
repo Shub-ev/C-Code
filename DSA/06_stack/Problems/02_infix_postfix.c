@@ -19,11 +19,9 @@ int precedence(char ch){
     }
 }
 
-int main(){
-    char ch[] = "A*B-(C+D)+E";
-    char res[20];
+void infix_postfix(char *ch, char *res){
     int res_c = 0;
-
+    
     for(int i = 0; ch[i] != '\0'; i++){
         if(isalnum(ch[i])){
             res[res_c++] = ch[i];
@@ -50,6 +48,13 @@ int main(){
         res[res_c++] = stack[top--];
     }
     res[res_c] = '\0';
+}
+
+int main(){
+    char ch[] = "A*B-(C+D)+E";
+    char res[20];
+
+    infix_postfix(ch, res);
 
     printf("Final : %s\n", res);
 
