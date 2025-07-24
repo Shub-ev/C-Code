@@ -20,7 +20,7 @@ int precedence(char ch){
 }
 
 int main(){
-    char ch[] = "(A+B)*C-D";
+    char ch[] = "A*B-(C+D)+E";
     char res[20];
     int res_c = 0;
 
