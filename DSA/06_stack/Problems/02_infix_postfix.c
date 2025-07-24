@@ -1,61 +1,57 @@
-// infix to postfix
-
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
-char stack[30];
+int stack[20];
 int top = -1;
 
-int precedence(char ch) {
-    switch(ch) {
+int precedence(char ch){
+    switch(ch){
         case '+':
-        case '-': return 1;
+        case '-':
+            return 1;
         case '*':
-        case '/': return 2;
-        case '^': return 3;
-        default: return 0;
+        case '\\':
+            return 2;
+        case '^':
+            return 3;
+        default:
+            return -1;
     }
 }
-
-void infix_postfix(const char *ch, char *res) {
-    int res_p = 0;
-    for (int i = 0; ch[i]; i++) {
-        if (isalnum(ch[i])) {
-            res[res_p++] = ch[i];
-        }
-        else if (ch[i] == '(') {
-            stack[++top] = ch[i];
-        }
-        else if (ch[i] == ')') {
-            while (top != -1 && stack[top] != '(') {
-                res[res_p++] = stack[top--];
-            }
-            if (top != -1 && stack[top] == '(')
-                top--;  // pop '('
-        }
-        else { // operator
-            while (top != -1 && precedence(stack[top]) >= precedence(ch[i])) {
-                res[res_p++] = stack[top--];
-            }
-            stack[++top] = ch[i];
-        }
-    }
-
-    while (top != -1) {
-        res[res_p++] = stack[top--];
-    }
-
-    res[res_p] = '\0';
-}
-
 
 int main(){
-	char expr[] = "a+b*(c^d-e)^(f+g*h)-i";
-	char res[sizeof(expr) + 1];
+    char ch[] = "(A+B)*C-D";
+    char res[20];
+    int res_c = 0;
 
-	infix_postfix(expr, res);
-	printf("Result : %s\n", res);
+    for(int i = 0; ch[i] != '\0'; i++){
+        if(isalnum(ch[i])){
+            res[res_c++] = ch[i];
+        }
+        else if(ch[i] == '('){
+            stack[++top] = '(';
+        }
+        else if(ch[i] == ')'){
+            while(top != -1 && stack[top] != '('){
+                res[res_c++] = stack[top--];
+            }
+            if(top != -1){
+                top--;
+            }
+        }
+        else{
+            while(top != -1 && precedence(stack[top]) >= precedence(ch[i])){
+                res[res_c++] = stack[top--];
+            }
+            stack[++top] = ch[i];
+        }
+    }
+    while(top != -1){
+        res[res_c++] = stack[top--];
+    }
+    res[res_c] = '\0';
 
-	return 0;
+    printf("Final : %s\n", res);
+
+    return 0;
 }
