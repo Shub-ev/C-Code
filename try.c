@@ -1,72 +1,19 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include<stdio.h>
 
-char stk[30];
-int top = -1;
-
-int ope_prec(char ch)
+int asc(int n)
 {
-    if(ch == '+' || ch == '-')
-        return 1;
-    else if(ch == '*' || ch == '/')
-        return 2;
-    else if(ch == '^')
-        return 3;
+    // static variables are not stored in stack frame hence for each function
+    // call same static var is abailable
+    static int x = 0;
     
+    if(n > 0){  // recursive condition
+        x++;
+        return asc(n-1) + x;
+    }
     return 0;
-}
-
-void infx_to_pstfx(char* str, char* res)
-{
-    int n = strlen(str);
-
-    int j = 0;
-    
-    for(int i = 0; str[i] != '\0'; i++)
-    {
-        char ch = str[i];
-
-        if(isalnum(ch))
-        {
-            res[j++] = ch;
-        }
-        else if(ch == '(')
-        {
-            stk[++top] = '(';
-        }
-        else if(str[i] == ')')
-        {
-            while(top != -1 && stk[top] != '(')
-            {
-                res[j++] = stk[top--];
-            }
-            if (top != -1 && stk[top] == '(')
-                top--;
-        }
-        else
-        {
-            while((ope_prec(str[i]) > ope_prec(stk[top])) && top != -1 && stk[top] != '(')
-            {
-                res[j++] = stk[top--];
-            }
-            stk[++top] = str[i];
-        }
-    }
-
-    while(top != -1)
-    {
-        res[j++] = stk[top--];
-    }
-
-    res[j] = '\0';
 }
 
 int main()
 {
-    char arr[] = "A+B*(C^D-E)^(F+G*H)-I";
-
-    char ch[strlen(arr)+1];
-    infx_to_pstfx(arr, ch);
-    printf("%s", ch);
+    printf("%d", asc(4));
 }
