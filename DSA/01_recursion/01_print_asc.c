@@ -8,9 +8,8 @@ void asc(int n){
 }
 
 int main(){
-    int n;
-    printf("Enter Size: ");
-    scanf("%d", &n);
+    int n = 5;
+    
     asc(n);
     return 0;
 }
