@@ -16,10 +16,8 @@ int facto_head(int n)
 
 int main()
 {
-    int n;
-    printf("Number : ");
-    scanf("%d", &n);
-
+    int n = 6;
+    
     printf("%d\n", facto_tail(n));
     printf("%d\n", facto_head(n));
 
