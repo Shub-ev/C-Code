@@ -8,9 +8,7 @@ void dsc(int n){
 }
 
 int main(){
-    int n;
-    printf("Enter Size: ");
-    scanf("%d", &n);
+    int n = 5;
     dsc(n);
     return 0;
 }
