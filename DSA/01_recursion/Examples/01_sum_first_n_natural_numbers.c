@@ -18,9 +18,7 @@ int sum_n_natural_head(int n){
 
 int main()
 {
-    int n;
-    printf("Enter Number : ");
-    scanf("%d", &n);
+    int n = 5;
 
     printf("%d\n", sum_n_natural_tail(n));
     printf("%d\n", sum_n_natural_head(n));
