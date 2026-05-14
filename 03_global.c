@@ -6,6 +6,6 @@ int v = 10;
 
 // this is function having external linkage (all functions have external linkage)
 int add(int a, int b){
-    printf("A + B : ", (a+b));
+    printf("A + B : %d", (a+b));
     return a + b;
 }
