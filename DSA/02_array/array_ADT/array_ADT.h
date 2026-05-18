@@ -18,7 +18,7 @@ void increase_array(struct Array*);
 void display(struct Array*);
 void append(struct Array*, int);
 void insert(struct Array*, int, int);
-// void remove(struct Array* , int);
+void delete(struct Array* , int);
 // void search(struct Array, int);
 // int get(struct Array, int);
 // void set(struct Array, int, int);
