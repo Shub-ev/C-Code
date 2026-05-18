@@ -1,6 +1,6 @@
 #include "array_ADT.h"
 
-void remove(struct Array* arr, int index)
+void delete(struct Array* arr, int index)
 {
     if(arr->length == 0)
     {
@@ -8,8 +8,15 @@ void remove(struct Array* arr, int index)
         return;
     }
     
-    if(index >= arr->length)
+    if(index >= arr->length || index < 0)
     {
-        
+        printf("Invalid position: Index is beyond array length!\n");
+        return;
+    }
+    else {
+        for(int i = index; i < arr->length - 1; i++) {
+            arr->array[i] = arr->array[i+1];
+        }
+        arr->length--;
     }
 }
