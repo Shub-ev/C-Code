@@ -19,12 +19,17 @@ void display(struct Array*);
 void append(struct Array*, int);
 void insert(struct Array*, int, int);
 void delete(struct Array* , int);
-// void search(struct Array, int);
+int linear_search(struct Array*, int);
+int binary_search(struct Array*, int);
 // int get(struct Array, int);
 // void set(struct Array, int, int);
 // int max(struct Array);
 // int min(struct Array);
-// void reverse(struct Array);
-// void shift(struct Array);
+// int sum(struct Array);
+// int avg(struct Array);
+void reverse(struct Array*);
+void left_rotate(struct Array*);
+// void right_shift(struct Array*);
+// void left_shift(struct Array*);
 
 #endif

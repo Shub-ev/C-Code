@@ -11,12 +11,15 @@ int main()
         printf("2. Append\n");
         printf("3. Insert\n");
         printf("4. Remove\n");
-        // printf("5. Display Array\n");
+        printf("5. Search Linear\n");
+        printf("6. Search Binary\n");
+        printf("7. Reverse Array\n");
+        printf("8. Left Rotate\n");
         
         printf("Enter Choince : ");
         scanf("%d", &n);
 
-        int data, index;
+        int data, index, res;
 
         switch(n) {
             case 1:
@@ -38,6 +41,28 @@ int main()
                 printf("Enter index: ");
                 scanf("%d", &index);
                 delete(arr, index);
+                break;
+            case 5:
+                printf("Enter element to search: ");
+                scanf("%d", &data);
+                res = linear_search(arr, data);
+                if(res == -1) printf("Element not found!\n");
+                else printf("Element present at index: %d\n", res);
+                break;
+            case 6:
+                printf("Enter element to search: ");
+                scanf("%d", &data);
+                res = binary_search(arr, data);
+                if(res == -1) printf("Element not found!\n");
+                else printf("Element present at index: %d\n", res);
+                break;
+            case 7:
+                reverse(arr);
+                printf("Array reversed!\n");
+                break;
+            case 8:
+                left_rotate(arr);
+                printf("Left shifted!\n");
                 break;
         }
     }while(n != 98);
